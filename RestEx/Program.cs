@@ -1,9 +1,15 @@
 ﻿using Microsoft.VisualBasic.FileIO;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestEx;
 using RestSharp;
 
-string baseUrl = "https://reqres.in/api/";
-var client = new RestClient(baseUrl);
+//string baseUrl = "https://reqres.in/api/";
+//var client = new RestClient(baseUrl);
+
+/*Error*/
+ApiWithEx ex = new ApiWithEx();
+ex.GetSingleUser();
 
 /*
 //GET
@@ -94,11 +100,12 @@ else
 //*****************************************************************
 //Modularized code
 
-GetAllUsers(client);
-CreateUser(client);
-UpdateUser(client);
-DeleteUser(client);
-GetSingleUser(client);
+//GetAllUsers(client);
+//CreateUser(client);
+//UpdateUser(client);
+//DeleteUser(client);
+//GetSingleUser(client);
+//GetSingleUserDes(client);
 
 //GET All Users
 static void GetAllUsers(RestClient client)
@@ -161,3 +168,29 @@ static void GetSingleUser(RestClient client)
         Console.WriteLine($"Error: {getUserResponse.ErrorMessage}");
     }
 }
+
+    //GET Single User-Deserialization
+    static void GetSingleUserDes(RestClient client)
+    {
+        var getUserRequest = new RestRequest("users/5", Method.Get);
+
+        var getUserResponse = client.Execute(getUserRequest);
+        if (getUserResponse.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+
+            var response = JsonConvert.DeserializeObject<UserDataResponse>(getUserResponse.Content);
+            UserData user = response.Data;
+            Console.WriteLine($"Id : {user.Id}");
+            Console.WriteLine($"Email : {user.Email}");
+            Console.WriteLine($"Name : {user.FirstName} {user.LastName}");
+            Console.WriteLine($"Avathar : {user.Avatar}");
+
+
+        }
+        else
+        {
+            Console.WriteLine($"Error: {getUserResponse.ErrorMessage}");
+        }
+    }
+
+
