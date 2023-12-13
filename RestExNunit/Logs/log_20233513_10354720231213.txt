@@ -1,0 +1,19 @@
+2023-12-13 10:35:47.600 +05:30 [INF] CreateUser Test Started
+2023-12-13 10:35:48.594 +05:30 [INF] API Response :{"name":"John Doe","job":"Software Developer","id":"123","createdAt":"2023-12-13T05:05:04.333Z"}
+2023-12-13 10:35:48.605 +05:30 [INF] User created and returned
+2023-12-13 10:35:48.606 +05:30 [INF] Email is not empty
+2023-12-13 10:35:48.606 +05:30 [INF] Create User test passed all Asserts
+2023-12-13 10:35:48.617 +05:30 [INF] GetSingleUser Test Started
+2023-12-13 10:35:48.753 +05:30 [INF] API Response :{"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+2023-12-13 10:35:48.757 +05:30 [INF] User returned
+2023-12-13 10:35:48.758 +05:30 [INF] user Id matches with fetch
+2023-12-13 10:35:48.760 +05:30 [INF] Email is not empty
+2023-12-13 10:35:48.760 +05:30 [INF] Get Single User test passed all Asserts
+2023-12-13 10:35:48.760 +05:30 [INF] UpdateUser Test Started
+2023-12-13 10:35:49.384 +05:30 [INF] API Response :{"name":"Updated John Doe","job":"Senior Software Developer","updatedAt":"2023-12-13T05:05:05.182Z"}
+2023-12-13 10:35:49.385 +05:30 [INF] User updated and  returned
+2023-12-13 10:35:49.385 +05:30 [INF] Update User test passed all Asserts
+2023-12-13 10:35:49.386 +05:30 [INF] DeleteUser Test Started
+2023-12-13 10:35:49.877 +05:30 [INF] Delete User test passed all Asserts
+2023-12-13 10:35:49.880 +05:30 [INF] NonExistingUser Test Started
+2023-12-13 10:35:49.979 +05:30 [INF] NonExisting User test passed all Asserts
